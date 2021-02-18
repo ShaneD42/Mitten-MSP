@@ -1,0 +1,55 @@
+{
+    "services": [
+        {"_id": "service1",
+        "title": "User Hardware Installation",
+        "image": "/images/service1.jpg",
+        "description": "about service 1",
+        "price": 50,
+        "productType": ["Desktop", "Laptop", "Tablet"]
+        },
+
+        {"_id": "service2",
+            "title": "Network Hardware Installation",
+            "image": "/images/service2.jpg",
+            "description": "about service 2",
+            "price": 100,
+            "productType": ["Switch", "Access Point", "NAS Storage Device"]
+            },
+
+            {"_id": "service3",
+                "title": "User Hardware Troubleshooting",
+                "image": "/images/service3.jpg",
+                "description": "about service 3",
+                "price": 25,
+                "productType": ["Desktop", "Laptop", "Tablet"]
+                },
+
+              {"_id": "service4",
+                    "title": "Network Troubleshooting",
+                    "image": "/images/service4.jpg",
+                    "description": "about service 4",
+                    "price": 50
+                    },
+
+              {"_id": "service5",
+                       "title": "Software Installation",
+                        "image": "/images/service5.jpg",
+                        "description": "about service 5",
+                        "price": 100,
+                        "productType": ["Email", "Design", "Producticity"]
+                        }, 
+
+                        {"_id": "service6",
+                            "title": "Firewall Installation and Configuration",
+                             "image": "/images/service6.jpg",
+                             "description": "about service 6",
+                             "price": 100,
+                             "productType": ["Firewall"]
+                             }
+                        
+                
+                
+    ]
+}
+
+
