@@ -1,6 +1,7 @@
 html {
   font-size: 63%;
   box-sizing: border-box;
+  background-color: #f6f5f5;
 }
 
 body, #root {
@@ -8,7 +9,7 @@ body, #root {
   margin: 0;
 }
 
-body,input, select, textarea {
+body,input, select, textarea{
   font-size: 1.6rem;
   font-family: 'Share Tech Mono', monospace;
 }
@@ -22,6 +23,11 @@ body,input, select, textarea {
   grid-template-rows: 5rem 1fr 5rem;
   grid-template-columns: 1fr;
   height: 100%;
+}
+
+a {
+  color: #8db596;
+  text-decoration: none;
 }
 
 a:hover{
@@ -84,10 +90,10 @@ footer {
 }
 
 .services li{
-  flex: 1 1 29rem;
+  flex: 0 1 29rem;
   height: 47rem;
   padding: 1rem;
-  margin: 1rem;
+  /* margin: 1rem; */
 
 }
 
@@ -105,4 +111,34 @@ footer {
   border-radius: 10px;
   border-color: #8db596;
   padding: 1rem;
+}
+
+.service-price {
+  display: flex;
+  justify-content: space-bewteen;
+  align-items: center;
+
+}
+
+.service-price div,
+.service-price button {
+  text-align: center; 
+  flex: .25;
+}
+
+.service-price div {
+  font-size: 2rem;
+}
+
+.button {
+  padding: 1rem;
+  border: .1rem;
+  border: solid;
+  border-color: #8db596;
+  border-radius: 10px;
+  background-color: #bedbbb;
+  font-family: 'Share Tech Mono', monospace;
+}
+.button:hover {
+  border: solid #707070 ;
 }
