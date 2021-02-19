@@ -28,7 +28,8 @@
                     "title": "Network Troubleshooting",
                     "image": "/images/service4.jpg",
                     "description": "about service 4",
-                    "price": 50
+                    "price": 50,
+                    "productType": ["Switch", "Access Point", "NAS Storage Device"]
                     },
 
               {"_id": "service5",
