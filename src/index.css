@@ -158,3 +158,50 @@ footer {
 .filter dvi {
   flex: 1;
 }
+
+/* Cart CSS */
+
+.cart {
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+} 
+
+.cart-header {
+  border-bottom: .1rem #707070 solid;
+}
+.cart-items{
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+}
+.cart-items img{
+  width: 5rem;
+}
+.cart li{
+  display: flex;
+
+}
+.cart-items li div{
+  padding: .5rem;
+}
+.cart-items li div:last-child{
+  flex: 1;
+}
+.right {
+  text-align: right;
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.total >div{
+  font-size: 2rem;
+}
+.total >div,
+.total > button{
+  flex: 1;
+}
