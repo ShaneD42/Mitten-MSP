@@ -4,19 +4,45 @@ import Services from "./components/Services";
 import data from  "./data.json";
 import Clock from 'react-live-clock';
 import Filter from "./components/Filter";
+import Cart from "./components/Cart";
+
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
       services: data.services,
+      cartItems: [], 
       productType: "",
       sort: "", 
     } 
   }
 
-  // sort results function
 
+// Add to Cart Function 
+addToCart = (service) => {
+  const cartItems = this.state.cartItems.slice();
+  let alreadyInCart = false;
+  cartItems.forEach((item) => {
+    if(item._id === service._id) {
+      item.count++;
+      alreadyInCart = true;
+    }
+  });
+  if (!alreadyInCart) {
+    cartItems.push({ ...service, count: 1});  
+  }
+  this.setState({cartItems}); 
+};
+
+// Remove From Cart Function
+
+removeFromCart = (service) => {
+  const cartItems = this.state.cartItems.slice();
+  this.setState({cartItems: cartItems.filter(x=>x._id !== service._id)})
+}
+
+  // Sort results function
   sortServices =(event) => {
     // implmenet 
     const sort = event.target.value;
@@ -33,8 +59,7 @@ class App extends React.Component {
     }))
   }
 
-  // filter results function 
-
+  // Filter results function 
   filterServices = (event) => { 
     // implempment 
     console.log(event.target.value);
@@ -53,10 +78,14 @@ class App extends React.Component {
   render()
   {return ( 
    <div className="grid-container">
+
+     {/* HEADER */}
      <header>
        <a href="/">Mitten MSP </a>
      </header>
 
+
+    {/* MAIN  */}
      <main>
        <div className="content">
          <div className="main"> 
@@ -65,23 +94,26 @@ class App extends React.Component {
          sort={this.state.sort}
          filterServices={this.filterServices}
          sortServices={this.sortServices}
-         > </Filter>
-         <Services services={this.state.services}> </Services> </div>
-         <div className="sidebar"> Cart Items </div>
+         ></Filter>
+         <Services services={this.state.services} addToCart={this.addToCart}> </Services> 
+         </div>
+         <div className="sidebar"> 
+         <Cart cartItems={this.state.cartItems} removeFromCart={this.removeFromCart} />
+         </div>
        </div>
-     </main>
+     </main> 
 
-     <footer>
-       
-     <Clock
-          date={'1997-12-31T14:15:23+01:00'}
-          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />
-     </footer>
-   </div>
-   
-  );
 
-  }
-}
+      {/* FOOTER */}
+
+          <footer>  
+          <Clock />
+          </footer>
+        </div>
+        
+        );
+
+        }
+      }
 
 export default App;
