@@ -72,7 +72,7 @@ export default class Services extends Component {
                                        Product Types {" "}
                                         {service.productType.map(x=> (
                                             <span> {" "} <button className="button"> {x} </button> </span>
-                                            ))}
+                                            ))} 
                                     </p>
                                     <div className="service-price">
                                         <div>
