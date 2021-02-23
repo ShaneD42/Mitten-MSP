@@ -2,7 +2,6 @@
 import React from "react";
 import Services from "./components/Services";
 import data from  "./data.json";
-import Clock from 'react-live-clock';
 import Filter from "./components/Filter";
 import Cart from "./components/Cart";
 
@@ -112,7 +111,7 @@ createOrder = (order) => {
          <Cart 
          cartItems={this.state.cartItems} 
          removeFromCart={this.removeFromCart}
-         createOrder ={this.createOrder} />
+         createOrder ={this.createOrder } />
          </div>
        </div>
      </main> 
@@ -121,7 +120,7 @@ createOrder = (order) => {
       {/* FOOTER */}
 
           <footer>  
-          <Clock />
+            All Rights Reserved 
           </footer>
         </div>
         
