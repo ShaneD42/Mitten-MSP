@@ -3,7 +3,7 @@
         {"_id": "service1",
         "title": "User Hardware Installation",
         "image": "/images/service1.jpg",
-        "description": "about service 1",
+        "description": "Onsite Technician to Install User Hardware",
         "price": 50,
         "productType": ["Desktop", "Laptop", "Tablet"]
         },
@@ -11,7 +11,7 @@
         {"_id": "service2",
             "title": "Network Hardware Installation",
             "image": "/images/service2.jpg",
-            "description": "about service 2",
+            "description": "Onsite Technician to Install Network Hardware",
             "price": 100,
             "productType": ["Switch", "Access Point", "NAS Storage Device"]
             },
@@ -19,7 +19,7 @@
             {"_id": "service3",
                 "title": "User Hardware Troubleshooting",
                 "image": "/images/service3.jpg",
-                "description": "about service 3",
+                "description": "Onsite or Remote Troubleshooting for User Hardware",
                 "price": 25,
                 "productType": ["Desktop", "Laptop", "Tablet"]
                 },
@@ -27,7 +27,7 @@
               {"_id": "service4",
                     "title": "Network Troubleshooting",
                     "image": "/images/service4.jpg",
-                    "description": "about service 4",
+                    "description": "Onsite or Remote Troubleshooting for Network",
                     "price": 50,
                     "productType": ["Switch", "Access Point", "NAS Storage Device"]
                     },
@@ -35,7 +35,7 @@
               {"_id": "service5",
                        "title": "Software Installation",
                         "image": "/images/service5.jpg",
-                        "description": "about service 5",
+                        "description": "Remote Assistance for Softwarte Downloads/Updates",
                         "price": 100,
                         "productType": ["Email", "Design", "Producticity"]
                         }, 
@@ -43,7 +43,7 @@
                         {"_id": "service6",
                             "title": "Firewall Installation and Configuration",
                              "image": "/images/service6.jpg",
-                             "description": "about service 6",
+                             "description": "Onsite Technician for Installation and Configuration of New Firewall",
                              "price": 100,
                              "productType": ["Firewall"]
                              }
