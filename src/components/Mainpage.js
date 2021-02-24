@@ -1,12 +1,12 @@
 // feature 1 
 import React from "react";
-import Services from "./components/Services";
-import data from  "./data.json";
-import Filter from "./components/Filter";
-import Cart from "./components/Cart";
+import Services from "./Services";
+import data from  "../data.json";
+import Filter from "./Filter";
+import Cart from "./Cart";
 
 
-class App extends React.Component {
+class Mainpage extends React.Component {
   constructor(){
     super();
     this.state = {
@@ -129,4 +129,4 @@ createOrder = (order) => {
         }
       }
 
-export default App;
+export default Mainpage;
