@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      services: data.services,
+      services: data.services, 
       cartItems: localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")): [], 
       productType: "",
       sort: "", 
@@ -120,7 +120,7 @@ createOrder = (order) => {
       {/* FOOTER */}
 
           <footer>  
-            All Rights Reserved 
+            All Rights Reserved  
           </footer>
         </div>
         
