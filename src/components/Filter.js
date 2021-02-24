@@ -23,6 +23,7 @@ export default class Filter extends Component {
                      <option value="Switch"> Switch </option>
                      <option value="Access Point"> Access Point </option>
                      <option value="NAS Storage Device"> NAS Storage Device </option>
+                     <option value="Firewall"> Firewall </option>
                     </select>
                     </div>
             
