@@ -25,51 +25,51 @@ export default class Services extends Component {
             <div>
                 <Fade bottom cascade>
                 <ul className="services">
-                   {this.props.services.map((service) => (
-                       <li key={service._id}>
-                           <div className="service">
-                               <a href={"#" + service._id} 
-                               onClick={() => this.openModal(service)}>
-                                   <img className ="service-images" src={service.image} alt={service.title}/>
-                                   <p>
-                                       {service.title}
-                                   </p>
-                               </a>
+                    {this.props.services.map((service) => (
+                        <li key={service._id}>
+                            <div className="service">
+                                <a href={"#" + service._id} 
+                                onClick={() => this.openModal(service)}>
+                                    <img className ="service-images" src={service.image} alt={service.title}/>
+                                    <p>
+                                        {service.title}
+                                    </p>
+                                </a>
 
-                               <div className="service-price">
-                                   <div>
-                                       {formatCurrency(service.price)}
-                                   </div>
-                                       <button onClick= {() => this.props.addToCart(service)}
-                                        className="button primary">
-                                           Add To Cart </button>
-                               </div>
+                                <div className="service-price">
+                                    <div>
+                                        {formatCurrency(service.price)}
+                                    </div>
+                                        <button onClick= {() => this.props.addToCart(service)}
+                                            className="button primary">
+                                            Add To Cart </button>
+                                </div>
 
-                           </div>
-                       </li>
-                   ))} 
-                 </ul>
-             </Fade>
-             {/* Modal */}
-             {service && (
-                     <Modal isOpen={true}
-                     onRequestClose={this.closeModal}>
-                         
-                         <Zoom>
-                             <button className="close-modal"
-                             onClick={this.closeModal}>x</button>
-                             
-                             <div className="service-details">
+                            </div>
+                        </li>
+                    ))} 
+                    </ul>
+                </Fade>
+                {/* Modal */}
+                {service && (
+                        <Modal isOpen={true}
+                        onRequestClose={this.closeModal}>
+                            
+                            <Zoom>
+                                <button className="close-modal"
+                                onClick={this.closeModal}>x</button>
+                                
+                                <div className="service-details">
                                 <img src={service.image} alt={service.title}/>
                                 <div className="service-details-description">
                                     <p>
-                                       <strong>{service.title}</strong>
+                                        <strong>{service.title}</strong>
                                     </p>
                                     <p>
                                         {service.description}
                                     </p>
                                     <p>
-                                       Product Types {" "}
+                                        Product Types {" "}
                                         {service.productType.map(x=> (
                                             <span> {" "} <button className="button"> {x} </button> </span>
                                             ))} 
@@ -84,12 +84,11 @@ export default class Services extends Component {
                                         </div>
                                     </div>
                                 </div>
-                             </div>
-                        
-                         </Zoom>
-                     </Modal>
-                 )}
-         </div>
+                            </div>                       
+                        </Zoom>
+                    </Modal>
+                )}
+            </div>
         )
     }
 }

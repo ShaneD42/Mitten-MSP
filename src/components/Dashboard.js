@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import { Alert, Button, Card, Container } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Footer from "./Footer"
+import Header2 from './Header2'
+import Chart from './Chart'
 
 export default function Dashboard() {
     const [error, setError] = useState("")
@@ -21,6 +24,8 @@ export default function Dashboard() {
 
     return (
         <>
+            <Header2/>
+            <h1 className="title">Welcome</h1>
             <Container
                 className="d-flex align-items-center justify-content-center"
                 style={{ minHeight: "100vh"}}
@@ -31,10 +36,10 @@ export default function Dashboard() {
                             <h2 className="text-center mb-4">Profile</h2>
                             {error && <Alert variant="danger">{error}</Alert>}
                             <strong>Email: </strong> {currentUser.email}
-                            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
+                            <Link to="/update-profile" className="btn w-100 mt-3 btn-success">
                                 Update Profile
                             </Link>
-                            <Link to="/main-page" className="btn btn-success w-100 mt-3">
+                            <Link to="/main-page" className="btn w-100 mt-3 btn-success">
                                 On to the Main Page!
                             </Link>
                         </Card.Body>
@@ -46,6 +51,10 @@ export default function Dashboard() {
                     </div>
                 </div>
             </Container>
+            <div>
+                <Chart />
+            </div>
+            <Footer/>
         </>
     )
 }

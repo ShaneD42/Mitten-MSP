@@ -4,6 +4,8 @@ import Services from "./Services";
 import data from  "../data.json";
 import Filter from "./Filter";
 import Cart from "./Cart";
+import Header from "./Header"
+import Footer from "./Footer";
 
 
 class Mainpage extends React.Component {
@@ -87,46 +89,37 @@ createOrder = (order) => {
 
   render()
   {return ( 
-   <div className="grid-container">
+    <div className="grid-container">
 
-     {/* HEADER */}
-     <header>
-       <a href="/">Mitten MSP </a>
-     </header>
+      {/* HEADER */}
+      <Header/>
 
-
-    {/* MAIN  */}
-     <main>
-       <div className="content">
-         <div className="main"> 
-         <Filter count={this.state.services.length}
-         productType={this.state.productType}
-         sort={this.state.sort}
-         filterServices={this.filterServices}
-         sortServices={this.sortServices}
-         ></Filter>
-         <Services services={this.state.services} addToCart={this.addToCart}> </Services> 
-         </div>
-         <div className="sidebar"> 
-         <Cart 
-         cartItems={this.state.cartItems} 
-         removeFromCart={this.removeFromCart}
-         createOrder ={this.createOrder } />
-         </div>
-       </div>
-     </main> 
-
+      {/* MAIN  */}
+      <main>
+        <div className="content">
+          <div className="main"> 
+          <Filter count={this.state.services.length}
+          productType={this.state.productType}
+          sort={this.state.sort}
+          filterServices={this.filterServices}
+          sortServices={this.sortServices}
+          ></Filter>
+          <Services services={this.state.services} addToCart={this.addToCart}> </Services> 
+          </div>
+          <div className="sidebar"> 
+          <Cart 
+          cartItems={this.state.cartItems} 
+          removeFromCart={this.removeFromCart}
+          createOrder ={this.createOrder } />
+          </div>
+        </div>
+      </main> 
 
       {/* FOOTER */}
-
-          <footer>  
-            All Rights Reserved  
-          </footer>
-        </div>
-        
-        );
-
-        }
-      }
+      <Footer/>
+    </div>
+    );
+  }
+}
 
 export default Mainpage;

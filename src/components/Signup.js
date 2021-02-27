@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Header2 from "./Header2";
+import Footer from "./Footer";
 
 export default function Signup() {
     const emailRef = useRef()
@@ -34,6 +36,8 @@ export default function Signup() {
 
     return (
         <>
+            <Header2/>
+            <h1 className="title">Register An Account</h1>
             <Container
                 className="d-flex align-items-center justify-content-center"
                 style={{ minHeight: "100vh"}}
@@ -56,18 +60,18 @@ export default function Signup() {
                                     <Form.Label>Password Confrimation</Form.Label>
                                     <Form.Control type="password" ref={passwordConfirmRef} required />
                                 </Form.Group>
-                                <Button disabled={loading} type="submit" className="w-100">
+                                <Button disabled={loading} type="submit" className="w-100 btn-success">
                                     Sign Up
                                 </Button>
                             </Form>
                         </Card.Body>
                     </Card>
-                
-                    <div className="w-100 text-center- mt-2">
+                    <div className="w-100 text-center mt-2">
                         Already have an Account? <Link to="/login">Log In</Link>
                     </div>
                 </div>
             </Container>
+            <Footer/>
         </>
     )
 }

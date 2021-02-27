@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Footer from "./Footer";
+import Header2 from "./Header2";
 
 
 export default function Login() {
@@ -29,6 +31,8 @@ export default function Login() {
 
     return (
         <>
+            <Header2/>
+            <h1 className="title">Log In To Continue</h1>
             <Container 
                 className="d-flex align-items-center justify-content-center"
                 style={{ minHeight: "100vh"}}
@@ -47,20 +51,21 @@ export default function Login() {
                                     <Form.Label>Password</Form.Label>
                                     <Form.Control type="password" ref={passwordRef} required />
                                 </Form.Group>
-                                <Button disabled={loading} type="submit" className="w-100">
+                                <Button disabled={loading} type="submit" className="btn w-100 btn-success">
                                     Login
                                 </Button>
                             </Form>
-                            <div className="w-100 text-center- mt-3">
+                            <div className="w-100 text-center mt-3">
                                 <Link to="/forgot-password">Forgot Password?</Link>
                             </div>
                         </Card.Body>
                     </Card>
-                    <div className="w-100 text-center- mt-2">
+                    <div className="w-100 text-center mt-2">
                         Don't have an account? <Link to="/signup">Sign Up</Link>
                     </div>
                 </div>
             </Container>
+            <Footer/>
         </>
     )
 }

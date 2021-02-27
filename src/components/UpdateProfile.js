@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert, Container } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import Footer from "./Footer";
+import Header2 from "./Header2"
 
 export default function UpdateProfile() {
     const emailRef = useRef()
@@ -43,10 +45,12 @@ export default function UpdateProfile() {
 
     return (
         <>
+            <Header2/>
+            <h1 className="title">Profile Management</h1>
             <Container
             className="d-flex align-items-center justify-content-center"
             style={{ minHeight: "100vh"}}
-        >
+            >
                 <div className="w-100" style={{ maxWidth:"400px"}}>
                     <Card>
                         <Card.Body>
@@ -65,17 +69,18 @@ export default function UpdateProfile() {
                                     <Form.Label>Password Confrimation</Form.Label>
                                     <Form.Control type="password" ref={passwordConfirmRef} placeholder="Leave blank to keep the same" />
                                 </Form.Group>
-                                <Button disabled={loading} type="submit" className="w-100">
+                                <Button disabled={loading} type="submit" className="w-100 btn-success">
                                     Update
                                 </Button>
                             </Form>
                         </Card.Body>
                     </Card>
-                    <div className="w-100 text-center- mt-2">
+                    <div className="w-100 text-center mt-2">
                         <Link to="/">Cancel</Link>
                     </div>
                 </div>
             </Container>
+            <Footer/>
         </>
     )
 }
