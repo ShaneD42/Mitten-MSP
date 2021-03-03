@@ -3,16 +3,23 @@ import formatCurrency from '../util';
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-modal';
 import Zoom from 'react-reveal/Zoom';
+import { fetchServices } from "../actions/serviceActions";
+import { connect } from "react-redux";
+import {addToCart} from "../actions/cartActions";
 
-
-
-export default class Services extends Component {
+ class Services extends Component {
     constructor(props){
         super(props);
         this.state = {
             product: null,
         };
     }
+
+    componentDidMount() {
+        this.props.fetchServices();
+    }
+
+
     openModal = (service) => {
         this.setState({service});
     };
@@ -24,6 +31,10 @@ export default class Services extends Component {
         return (
             <div>
                 <Fade bottom cascade>
+                    {
+                        !this.props.services ? ( <div> loading... </div>
+                        ) : (
+                    
                 <ul className="services">
                     {this.props.services.map((service) => (
                         <li key={service._id}>
@@ -45,21 +56,22 @@ export default class Services extends Component {
                                             Add To Cart </button>
                                 </div>
 
-                            </div>
-                        </li>
-                    ))} 
-                    </ul>
-                </Fade>
-                {/* Modal */}
-                {service && (
-                        <Modal isOpen={true}
-                        onRequestClose={this.closeModal}>
-                            
-                            <Zoom>
-                                <button className="close-modal"
-                                onClick={this.closeModal}>x</button>
-                                
-                                <div className="service-details">
+                           </div>
+                       </li>
+                   ))} 
+                 </ul>
+                        )}
+             </Fade>
+             {/* Modal */}
+             {service && (
+                     <Modal isOpen={true}
+                     onRequestClose={this.closeModal}>
+                         
+                         <Zoom>
+                             <button className="close-modal"
+                             onClick={this.closeModal}>x</button>
+                             
+                             <div className="service-details">
                                 <img src={service.image} alt={service.title}/>
                                 <div className="service-details-description">
                                     <p>
@@ -92,3 +104,11 @@ export default class Services extends Component {
         )
     }
 }
+
+export default connect(
+(state) => ({services: state.services.filteredItems}), 
+{ 
+fetchServices,
+addToCart
+})
+(Services)
