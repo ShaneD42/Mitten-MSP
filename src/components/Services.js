@@ -107,8 +107,5 @@ import {addToCart} from "../actions/cartActions";
 
 export default connect(
 (state) => ({services: state.services.filteredItems}), 
-{ 
-fetchServices,
-addToCart
-})
-(Services)
+{ fetchServices, addToCart})
+(Services);

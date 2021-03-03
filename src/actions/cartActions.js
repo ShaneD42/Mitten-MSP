@@ -1,6 +1,5 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../types";
 
-
 export const addToCart = (service) => (dispatch, getState) => {
     const cartItems = getState().cart.cartItems.slice();
     let alreadyExists = false;
@@ -27,3 +26,5 @@ export const addToCart = (service) => (dispatch, getState) => {
     dispatch({ type: REMOVE_FROM_CART, payload: { cartItems } });
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
+
+  

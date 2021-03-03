@@ -52,8 +52,5 @@ export default connect(
     services: state.services.items,
     filteredServices: state.services.filteredItems  
 }),
-{
-    filterServices,
-    sortServices,
-}
+{ filterServices, sortServices }
 ) (Filter); 
