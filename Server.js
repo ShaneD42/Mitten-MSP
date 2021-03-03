@@ -37,8 +37,8 @@ const Service = mongoose.model(
 
 // Get - list of all services 
 app.get("/api/services", async (req, res) => {
-    const products = await Service.find({});
-    res.send(products);
+    const services = await Service.find({});
+    res.send(services);
   });
 
 // Post - create new service 
